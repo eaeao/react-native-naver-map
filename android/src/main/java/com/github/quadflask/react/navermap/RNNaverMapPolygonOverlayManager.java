@@ -32,13 +32,6 @@ public class RNNaverMapPolygonOverlayManager extends EventEmittableViewGroupMana
         }
     }
 
-    @Override
-    String[] getEventNames() {
-        return new String[]{
-                "onClick"
-        };
-    }
-
     @NonNull
     @Override
     public String getName() {
