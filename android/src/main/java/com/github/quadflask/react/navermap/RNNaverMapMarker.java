@@ -145,6 +145,10 @@ public class RNNaverMapMarker extends ClickableRNNaverMapFeature<Marker> {
         feature.setCaptionAligns(aligns);
     }
 
+    public void setCaptionOffset(int offset) {
+        feature.setCaptionOffset(offset);
+    }
+
     public void removeCaption() {
         feature.setCaptionText("");
     }

@@ -1,7 +1,9 @@
 package com.github.quadflask.react.navermap;
 
 import android.content.Context;
+import androidx.annotation.NonNull;
 import com.naver.maps.geometry.LatLng;
+import com.naver.maps.map.overlay.Overlay;
 import com.naver.maps.map.overlay.PolygonOverlay;
 
 import java.util.List;
@@ -30,5 +32,21 @@ public class RNNaverMapPolygonOverlay extends ClickableRNNaverMapFeature<Polygon
 
     public void setHoles(List<List<LatLng>> holes) {
         feature.setHoles(holes);
+    }
+
+    public void setGlobalZIndex(int globalZIndex) {
+        feature.setGlobalZIndex(globalZIndex);
+    }
+
+    @Override
+    public void addToMap(RNNaverMapView map) {
+        super.addToMap(map);
+        feature.setOnClickListener(this);
+    }
+
+    @Override
+    public boolean onClick(@NonNull Overlay overlay) {
+        emitEvent("onClick", null);
+        return false;
     }
 }

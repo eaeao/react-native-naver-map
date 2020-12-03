@@ -32,6 +32,13 @@ public class RNNaverMapPolygonOverlayManager extends EventEmittableViewGroupMana
         }
     }
 
+    @Override
+        String[] getEventNames() {
+            return new String[]{
+                    "onClick"
+            };
+        }
+
     @NonNull
     @Override
     public String getName() {
@@ -74,5 +81,10 @@ public class RNNaverMapPolygonOverlayManager extends EventEmittableViewGroupMana
                 holesArray.add(toLatLngList(hole));
         }
         view.setHoles(holesArray);
+    }
+
+    @ReactProp(name = "globalZIndex", defaultInt = -200000)
+    public void setGlobalZIndex(RNNaverMapPolygonOverlay view, int globalZIndex) {
+        view.setGlobalZIndex(globalZIndex);
     }
 }

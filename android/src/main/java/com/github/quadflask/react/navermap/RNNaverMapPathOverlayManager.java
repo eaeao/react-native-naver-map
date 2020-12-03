@@ -34,7 +34,7 @@ public class RNNaverMapPathOverlayManager extends EventEmittableViewGroupManager
     @Override
     String[] getEventNames() {
         return new String[]{
-                "onClick"
+                "onClick", "onClickReturnFalse"
         };
     }
 
