@@ -267,10 +267,16 @@ public class RNNaverMapView extends MapView implements OnMapReadyCallback, Naver
     @Override
     public void onCameraIdle() {
         CameraPosition cameraPosition = naverMap.getCameraPosition();
+        Projection projection = naverMap.getProjection();
 
         WritableMap param = Arguments.createMap();
+        LatLng coord = projection.fromScreenLocation(new PointF(0, 0));
         param.putDouble("latitude", cameraPosition.target.latitude);
         param.putDouble("longitude", cameraPosition.target.longitude);
+        param.putDouble("latitudeMin", coord.latitude);
+        param.putDouble("longitudeMin", coord.longitude);
+        param.putDouble("latitudeMax", coord.latitude + (cameraPosition.target.latitude - coord.latitude) * 2);
+        param.putDouble("longitudeMax", coord.longitude + (cameraPosition.target.longitude - coord.longitude) * 2);
         param.putDouble("zoom", cameraPosition.zoom);
 
         emitEvent("onCameraChange", param);
