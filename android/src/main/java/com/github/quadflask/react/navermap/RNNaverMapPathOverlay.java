@@ -152,4 +152,8 @@ public class RNNaverMapPathOverlay extends ClickableRNNaverMapFeature<PathOverla
     private int getRidFromName(String name) {
         return getContext().getResources().getIdentifier(name, "drawable", getContext().getPackageName());
     }
+
+    public void setGlobalZIndex(int globalZIndex) {
+        feature.setGlobalZIndex(globalZIndex);
+    }
 }

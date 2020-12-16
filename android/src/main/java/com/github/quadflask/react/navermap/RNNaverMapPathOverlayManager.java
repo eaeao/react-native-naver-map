@@ -107,4 +107,9 @@ public class RNNaverMapPathOverlayManager extends EventEmittableViewGroupManager
     public void setProgress(RNNaverMapPathOverlay view, float progress) {
         view.setProgress(progress);
     }
+
+    @ReactProp(name = "globalZIndex", defaultInt = -100000)
+    public void setGlobalZIndex(RNNaverMapPathOverlay view, int globalZIndex) {
+        view.setGlobalZIndex(globalZIndex);
+    }
 }
