@@ -31,5 +31,6 @@
 - (void)setCaptionColor:(UIColor *) color;
 - (void)setCaptionHaloColor:(UIColor *) color;
 - (void)setCaptionAligns:(NSArray<NMFAlignType *> *) aligns;
+- (void)setCaptionOffset:(CGFloat) offset;
 
 @end
