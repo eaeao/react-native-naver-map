@@ -61,6 +61,10 @@
   _realOverlay.outlineColor = outlineColor;
 }
 
+- (void)setGlobalZIndex:(CGFloat) globalZIndex {
+  _realOverlay.globalZIndex = globalZIndex;
+}
+
 - (void) setPassedOutlineColor: (UIColor*) passedOutlineColor {
   _realOverlay.passedOutlineColor = passedOutlineColor;
 }
