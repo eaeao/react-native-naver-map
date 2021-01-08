@@ -97,10 +97,16 @@
 }
 
 - (void)mapViewIdle:(nonnull NMFMapView *)mapView {
+  NMFProjection *projection = mapView.projection;
+  NMGLatLng *coord = [projection latlngFromPoint:CGPointMake(0, 0)];
   if (((RNNaverMapView*)self).onCameraChange != nil)
     ((RNNaverMapView*)self).onCameraChange(@{
       @"latitude" : @(mapView.cameraPosition.target.lat),
       @"longitude": @(mapView.cameraPosition.target.lng),
+      @"latitudeMin" : @(coord.lat),
+      @"longitudeMin": @(coord.lng),
+      @"latitudeMax" : @(coord.lat + (mapView.cameraPosition.target.lat - coord.lat) * 2),
+      @"longitudeMax": @(coord.lng + (mapView.cameraPosition.target.lng - coord.lng) * 2),
       @"zoom"     : @(mapView.cameraPosition.zoom)
     });
 }
