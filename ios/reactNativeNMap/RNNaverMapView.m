@@ -11,6 +11,7 @@
 #import <React/RCTBridge.h>
 #import <React/UIView+React.h>
 
+#import <NMapsMap/NMFProjection.h>
 #import <NMapsMap/NMGLatLng.h>
 #import <NMapsMap/NMFMarker.h>
 #import <NMapsMap/NMFCameraUpdate.h>

@@ -21,6 +21,7 @@
 @property (nonatomic, strong) UIColor *color;
 @property (nonatomic, strong) UIColor *outlineColor;
 @property (nonatomic, assign) CGFloat outlineWidth;
+@property (nonatomic, assign) CGFloat globalZIndex;
 @property (nonatomic, copy) RCTDirectEventBlock onClick;
 
 - (void)setPolygonWithRing:(NMGLineString*) exteriorRing interiorRings:(NSArray<NMGLineString*>*) interiorRings;

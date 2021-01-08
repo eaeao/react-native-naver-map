@@ -83,6 +83,10 @@
   _realMarker.captionTextSize = size;
 }
 
+- (void)setCaptionOffset:(CGFloat) offset {
+  _realMarker.captionOffset = offset;
+}
+
 - (void)setCaptionColor:(UIColor *) color {
   _realMarker.captionColor = color == nil ? UIColor.blackColor : color;
 }

@@ -29,7 +29,7 @@
     _realOverlay.touchHandler = ^BOOL(NMFOverlay *overlay) {
       if (this.onClick != nil) {
         this.onClick(@{});
-        return YES;
+        return NO;
       }
       return NO;
     };
@@ -51,6 +51,10 @@
 
 - (void)setColor:(UIColor*) color {
   _realOverlay.fillColor = color;
+}
+
+- (void)setGlobalZIndex:(CGFloat) globalZIndex {
+  _realOverlay.globalZIndex = globalZIndex;
 }
 
 @end

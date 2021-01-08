@@ -31,6 +31,7 @@ RCT_CUSTOM_VIEW_PROPERTY(caption, NSDictionary, RNNaverMapMarker)
   UIColor *color = [RCTConvert UIColor:dic[@"color"]];
   UIColor *haloColor = [RCTConvert UIColor:dic[@"haloColor"]];
   NMFAlignType *align = [RCTConvert NMFAlignType:dic[@"align"]];
+  CGFloat offset = [RCTConvert CGFloat:dic[@"offset"]];
   NSMutableArray<NMFAlignType *> *alignTypes = [NSMutableArray arrayWithCapacity: 1];
 
   [alignTypes addObject: align];
@@ -40,6 +41,7 @@ RCT_CUSTOM_VIEW_PROPERTY(caption, NSDictionary, RNNaverMapMarker)
   [view setCaptionColor:color];
   [view setCaptionHaloColor:haloColor];
   [view setCaptionAligns:alignTypes];
+  [view setCaptionOffset:offset];
 }
 
 RCT_EXPORT_VIEW_PROPERTY(coordinate, NMGLatLng)
