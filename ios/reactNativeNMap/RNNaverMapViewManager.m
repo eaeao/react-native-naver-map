@@ -150,6 +150,12 @@ RCT_CUSTOM_VIEW_PROPERTY(bearing, BOOL, RNNaverMapView)
   // TODO
 }
 
+RCT_CUSTOM_VIEW_PROPERTY(layerGroupBike, BOOL, RNNaverMapView)
+{
+  if (json == nil) [self.mapView setLayerGroup:NMF_LAYER_GROUP_TRANSIT isEnabled: NO];
+  [self.mapView setLayerGroup:NMF_LAYER_GROUP_TRANSIT isEnabled: [json boolValue]];
+}
+
 RCT_EXPORT_METHOD(setLocationTrackingMode:(nonnull NSNumber *)reactTag
                   withMode: (nonnull NSNumber *) mode
                   )
